@@ -1,9 +1,11 @@
 .env
+.env~
+.continue
 *.env
 settings.json
-.vscode/
-.venv/
-__pycache__/
+.vscode
+.venv
+__pycache__
 *.pyc
 *.pyo
 *.pyd

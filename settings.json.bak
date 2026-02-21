@@ -1,0 +1,3 @@
+{
+  "continue.apiKey": "${env:CODESTRAL_API_KEY}"
+}
