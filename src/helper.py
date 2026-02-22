@@ -1,3 +1,12 @@
+#! /usr/bin/env python.exe
+##
+#   NAS Helper Script
+#
+#   New-Alias incus .\helper.py
+#   Remove-Alias incus
+#
+##
+
 import typer
 from nas import NAS
 from share import Share
