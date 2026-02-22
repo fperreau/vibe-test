@@ -57,16 +57,13 @@ class NAS(HR.Helper):
     def __init__(self, name):
         super().__init__(name)
 
-    @staticmethod
     def list():
         typer.echo("Listing NAS devices")
 
-    @staticmethod
     def create(name: str):
         HR.Helper.create(name)
         typer.echo(f"Creating NAS device: {name}")
 
-    @staticmethod
     def delete(name: str):
         typer.echo(f"Deleting NAS device: {name}")
 
@@ -87,27 +84,22 @@ class Share(NAS):
     def __str__(self):
         return f"share: {self.name}, source: {self.source}, mount_point: {self.mount_point}, owner: {self.user}, type: {self.type}"
 
-    @staticmethod
     def list():
         typer.echo("Listing shares")
         i = 0
         for obj in Share.dShare.values():
             i += 1
-            typer.echo(f"id: {i}, {obj.__str__()}")
-   
+            typer.echo(f"id: {i}, {obj.__str__()}")   
 
-    @staticmethod
     def create(name: str, source: str, mount_point: str, user=None, type="cifs"):
         obj = Share(name, source, mount_point, user, type)
         Share.dShare[name] = obj
         typer.echo(f"Created share: {obj.__str__()}")
 
-    @staticmethod
     def delete(name: str):
 
         typer.echo(f"Deleting share: {name}")
 
-    @staticmethod
     def owner(user: str):
         typer.echo(f"Setting user {user} as owner of share {share}")
 
